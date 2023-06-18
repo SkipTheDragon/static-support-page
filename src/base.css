@@ -17,3 +17,21 @@
 .animate-slide-up {
     animation: slideUp 1s ease-in-out;
 }
+
+@keyframes buzz {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px) rotateZ(-5deg);
+    }
+    50% {
+        transform: translateX(5px) rotateZ(5deg);
+    }
+    75% {
+        transform: translateX(-5px) rotateZ(-5deg);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
