@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Support Center - WYVERR INC.</title>
@@ -115,19 +115,18 @@
 
 <div class="fixed bottom-4 animate-in animate-buzz right-4">
     <a id="purchase-location" href="mailto:sales@wyverr.com">
-        <div id="animated-location" class="flex w-128 items-center rounded-lg shadow-lg mb-4 flex bg-red-500 p-4 text-red-100">
-            <div class="w-64">
+        <div id="animated-location" class="flex w-96 items-center rounded-lg shadow-lg mb-4 flex bg-red-500 p-4 text-red-100">
+            <div class="">
                 <h4 class="mb-2 font-bold">Not a customer yet?</h4>
-                <p>Purchase the plugin now, and you will get a free installation!</p>
+                <p>Purchase the product now, and you will get a free installation!
+                    <br/>
+                    <br/>
+                    Even better if you are using our <a class="underline" href="https://www.vultr.com/?ref=9484453-8H">Vultr</a> referral code you can get $100 and a free server setup from us!</p>
+                <br/>
+                <a href="#" id="purchase-location2" class="text-red-100 hover:text-sky-200">Purchase Now &rarr;</a>
             </div>
-            <div class="w-12">
-                <div class="text-2xl p-2 bg-red-600 rounded-full ">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                         class="w-6 h-6">
-                        <path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z"/>
-                    </svg>
-                </div>
-            </div>
+
+
         </div>
     </a>
 </div>
@@ -179,10 +178,10 @@
             // Docs
             const currentURL = window.location.href;
             const updatedURL = currentURL.replace(`.support.`, `.${l}.`);
-            const linkElement = document.getElementById(l + '-location'); // Replace 'your-link-id' with the actual ID of your <a> element
-            if (linkElement) {
-                linkElement.href = updatedURL;
-            }
+            const linkElement = document.querySelectorAll('[id^="'+l+'-location"]'); // Replace 'your-link-id' with the actual ID of your <a> element
+            linkElement.forEach((le) => {
+                le.href = updatedURL;
+            })
         })
 
         const animatedElement = document.getElementById('animated-location');
@@ -192,7 +191,7 @@
             animatedElement.style.animation = 'none';
             void animatedElement.offsetWidth;
             animatedElement.style.animation = 'buzz 0.4s ease-in-out';
-        }, 2000);
+        }, 5000);
     });
 </script>
 </body>
